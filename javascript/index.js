@@ -3,11 +3,11 @@ function updateTime() {
   if (newOrleansElement) {
     let newOrleansDateElement = newOrleansElement.querySelector(".date");
     let newOrleansTimeElement = newOrleansElement.querySelector(".time");
-    let newOrleansTime = moment().tz(America / New_Orleans);
+    let newOrleansTime = moment().tz("America/New_Orleans");
 
     newOrleansDateElement.innerHTML = newOrleansTime.format("MMMM Do YYYY");
     newOrleansTimeElement.innerHTML = newOrleansTime.format(
-      "h:mm:ss. [<small>]A[</small>]"
+      "h:mm:ss [<small>]A[</small>]"
     );
   }
 
@@ -15,11 +15,11 @@ function updateTime() {
   if (accraElement) {
     let accraDateElement = accraElement.querySelector(".date");
     let accraTimeElement = accraElement.querySelector(".time");
-    let accraTime = moment().tz(Africa / Accra);
+    let accraTime = moment().tz("Africa/Accra");
 
     accraDateElement.innerHTML = accraTime.format("MMMM Do YYYY");
     accraTimeElement.innerHTML = accraTime.format(
-      "h:mm:ss. [<small>]A[</small>]"
+      "h:mm:ss [<small>]A[</small>]"
     );
   }
 }
@@ -36,7 +36,7 @@ function updateCity(event) {
   <div class="city">
     <div>
       <h2>${cityName}</h2>
-      <div class="date">${cityTime.format("MMMM	Do YYYY")}</div>
+      <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
     </div>
     <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format(
     "A"
